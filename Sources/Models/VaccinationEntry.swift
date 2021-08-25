@@ -162,7 +162,7 @@ public struct VaccinationEntry: HCertEntry {
 
   var diseaseTargeted: String
   var vaccineOrProphylaxis: String
-  var medicalProduct: String
+  public var medicalProduct: String
   public var manufacturer: String
   var countryCode: String
   var issuer: String
