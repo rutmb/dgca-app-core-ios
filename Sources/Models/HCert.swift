@@ -616,28 +616,28 @@ public struct HCert {
     []
   }
   
-  var testStatements: [TestEntry] {
+  public var testStatements: [TestEntry] {
     return get(.testStatements)
       .array?
       .compactMap {
         TestEntry(body: $0)
       } ?? []
   }
-  var vaccineStatements: [VaccinationEntry] {
+  public var vaccineStatements: [VaccinationEntry] {
     return get(.vaccineStatements)
       .array?
       .compactMap {
         VaccinationEntry(body: $0)
       } ?? []
   }
-  var recoveryStatements: [RecoveryEntry] {
+  public var recoveryStatements: [RecoveryEntry] {
     return get(.recoveryStatements)
       .array?
       .compactMap {
         RecoveryEntry(body: $0)
       } ?? []
   }
-  var statements: [HCertEntry] {
+  public var statements: [HCertEntry] {
     testStatements + vaccineStatements + recoveryStatements
   }
   public var statement: HCertEntry! {
