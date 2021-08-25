@@ -161,3 +161,24 @@ public struct CBOR {
     return SHA256.digest(input: data as NSData).base64EncodedString()
   }
 }
+
+public extension CBOR {
+  static var coseTag: UInt64 {
+    UInt64(18)
+  }
+  
+  static func signature(from cborData: Data) -> String? {
+    let decoder = SwiftCBOR.CBORDecoder(input: cborData.uint)
+
+    guard
+      let cbor = try? decoder.decodeItem(),
+      case let SwiftCBOR.CBOR.tagged(tag, cborElement) = cbor,
+      tag.rawValue == coseTag, // SIGN1
+      case let SwiftCBOR.CBOR.array(array) = cborElement,
+      case let SwiftCBOR.CBOR.byteString(signature) = array[3]
+    else {
+      return nil
+    }
+    return Data(signature).hexString
+  }
+}

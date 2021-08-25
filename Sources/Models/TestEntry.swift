@@ -36,6 +36,10 @@ enum TestResult: String {
 public struct TestEntry: HCertEntry {
   public var typeAddon: String { "" }
 
+  public var isValid: Bool {
+    resultNegative && sampleTime < Date()
+  }
+
   public var info: [InfoSection] {
     [
       InfoSection(header: l10n("test.sample-date-time"), content: sampleTime.dateTimeStringUtc),
@@ -143,7 +147,7 @@ public struct TestEntry: HCertEntry {
 
   var diseaseTargeted: String
   var type: String
-  var sampleTime: Date
+  public var sampleTime: Date
   var resultNegative: Bool
   var testCenter: String
   var countryCode: String

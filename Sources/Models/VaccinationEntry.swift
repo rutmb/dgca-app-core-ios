@@ -163,11 +163,11 @@ public struct VaccinationEntry: HCertEntry {
   var diseaseTargeted: String
   var vaccineOrProphylaxis: String
   var medicalProduct: String
-  var manufacturer: String
+  public var manufacturer: String
   var countryCode: String
   var issuer: String
   public var uvci: String
-  var doseNumber: Int
-  var dosesTotal: Int
-  var date: Date
+  public var doseNumber: Int
+  public var dosesTotal: Int
+  public var date: Date
 }

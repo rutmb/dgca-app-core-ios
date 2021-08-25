@@ -69,7 +69,7 @@ extension Date {
     self = date
   }
   
-  init?(dateString: String) {
+  public init?(dateString: String) {
     if let date = Date.dateFormatter.date(from: dateString) {
       self = date
     } else if let date = Date.dateFormatterYM.date(from: dateString) {
