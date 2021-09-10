@@ -160,12 +160,12 @@ public struct VaccinationEntry: HCertEntry {
     self.date = date
   }
 
-  var diseaseTargeted: String
-  var vaccineOrProphylaxis: String
+  public var diseaseTargeted: String
+  public var vaccineOrProphylaxis: String
   public var medicalProduct: String
   public var manufacturer: String
-  var countryCode: String
-  var issuer: String
+  public var countryCode: String
+  public var issuer: String
   public var uvci: String
   public var doseNumber: Int
   public var dosesTotal: Int

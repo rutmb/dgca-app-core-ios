@@ -145,12 +145,12 @@ public struct TestEntry: HCertEntry {
     self.uvci = uvci
   }
 
-  var diseaseTargeted: String
-  var type: String
+  public var diseaseTargeted: String
+  public var type: String
   public var sampleTime: Date
-  var resultNegative: Bool
-  var testCenter: String
-  var countryCode: String
-  var issuer: String
+  public var resultNegative: Bool
+  public var testCenter: String
+  public var countryCode: String
+  public var issuer: String
   public var uvci: String
 }
